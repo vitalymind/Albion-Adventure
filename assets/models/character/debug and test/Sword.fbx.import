@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://4j838682qok2"
-path="res://.godot/imported/Sword And Shield Slash.fbx-199422d1f48656f89af96b203a047623.scn"
+uid="uid://dfla5oow2jbgc"
+path="res://.godot/imported/Sword.fbx-196f12abd2a57b19287e2d57fbc8b195.scn"
 
 [deps]
 
-source_file="res://assets/models/character/model/Sword And Shield Slash.fbx"
-dest_files=["res://.godot/imported/Sword And Shield Slash.fbx-199422d1f48656f89af96b203a047623.scn"]
+source_file="res://assets/models/character/debug and test/Sword.fbx"
+dest_files=["res://.godot/imported/Sword.fbx-196f12abd2a57b19287e2d57fbc8b195.scn"]
 
 [params]
 
