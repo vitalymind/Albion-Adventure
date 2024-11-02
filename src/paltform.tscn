@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqavy4nvnkswc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7u7ym"]
+size = Vector3(10, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8xcqe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dveko"]
+metallic = 0.55
+metallic_specular = 0.71
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_7u7ym")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 0.997, 0, 0, 0)
+mesh = SubResource("BoxMesh_8xcqe")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dveko")
