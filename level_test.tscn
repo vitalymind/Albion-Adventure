@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcex0swdc6iii"]
+
+[ext_resource type="ArrayMesh" uid="uid://rjcjqoiyc0rr" path="res://assets/models/rock.obj" id="1_hpkjh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kx31x"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_hqcbf"]
+sky_material = SubResource("ProceduralSkyMaterial_kx31x")
+
+[sub_resource type="Environment" id="Environment_ok4xm"]
+background_mode = 2
+sky = SubResource("Sky_hqcbf")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ok4xm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.999918, 0, -0.0127755, 0, 1, 0, 0.0127755, 0, 0.999918, 0, 0, 5.13483)
+
+[node name="Rock" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30605, -1.92542, -12.9639)
+mesh = ExtResource("1_hpkjh")
