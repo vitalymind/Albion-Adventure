@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo06ccpt6oe6k"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bwn72"]
+height = 1.76985
+
+[sub_resource type="Skin" id="Skin_csm14"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.878855, 0)
+slide_on_ceiling = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0327566, 0)
+shape = SubResource("CapsuleShape3D_bwn72")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+skin = SubResource("Skin_csm14")
