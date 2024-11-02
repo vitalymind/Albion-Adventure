@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://co5nhdd2vjsay"
-path="res://.godot/imported/Sword And Shield Jump.fbx-d9faa8600b99cc2bd91f36cde7a5cf63.scn"
+uid="uid://dpecjtfc5rram"
+path="res://.godot/imported/base.fbx-9925485338184b5954d6a89814ce56e3.scn"
 
 [deps]
 
-source_file="res://assets/models/character/animations/Sword And Shield Jump.fbx"
-dest_files=["res://.godot/imported/Sword And Shield Jump.fbx-d9faa8600b99cc2bd91f36cde7a5cf63.scn"]
+source_file="res://assets/models/character/debug and test/base.fbx"
+dest_files=["res://.godot/imported/base.fbx-9925485338184b5954d6a89814ce56e3.scn"]
 
 [params]
 
