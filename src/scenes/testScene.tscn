@@ -37,7 +37,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_6j6h3")
 
 [node name="player" parent="." instance=ExtResource("2_6xhlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73017, 0.878855, 0)
-visible = false
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86562, -1.13935, 1.83218)
