@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://g8mory3p6kb4"]
+
+[ext_resource type="PackedScene" uid="uid://ehmeqam266dg" path="res://assets/models/Meadow_Source_Files/FBX/SM_Env_Wildflowers_01.fbx" id="1_myl60"]
+[ext_resource type="PackedScene" uid="uid://c5qkf82ggefqv" path="res://assets/models/Meadow_Source_Files/FBX/SM_Env_Rock_Small_Pile_02.fbx" id="2_2o0w1"]
+[ext_resource type="PackedScene" uid="uid://cipogrulkkbn0" path="res://assets/models/Meadow_Source_Files/FBX/SM_Env_Rock_Pile_03.fbx" id="3_cvgab"]
+[ext_resource type="PackedScene" uid="uid://tbnoxjftxqpt" path="res://assets/models/Meadow_Source_Files/FBX/SM_Env_Rock_Cliff_01.fbx" id="4_4tc2n"]
+[ext_resource type="PackedScene" uid="uid://dvn2ge110lhya" path="res://assets/models/Meadow_Source_Files/FBX/SM_Bld_Windmill_01.fbx" id="5_8plqf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vspfp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_c6me8"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cweqo"]
+
+[sub_resource type="Sky" id="Sky_vorho"]
+sky_material = SubResource("ProceduralSkyMaterial_cweqo")
+
+[sub_resource type="Environment" id="Environment_mmm6x"]
+background_mode = 2
+sky = SubResource("Sky_vorho")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_wchj3"]
+
+[node name="LevelDesign" type="Node2D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1.89342, 0, 0, 0, 1, 0, -0.426823, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_vspfp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D"]
+transform = Transform3D(7.39268, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_c6me8")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
+environment = SubResource("Environment_mmm6x")
+camera_attributes = SubResource("CameraAttributesPractical_wchj3")
+
+[node name="SM_Env_Wildflowers_01" parent="Node3D" instance=ExtResource("1_myl60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.36985, 0.510352, -0.0290422)
+visible = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.404439, 0.914565, 0, -0.914565, 0.404439, 0, 0.698308, 2.03195)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.569636, 1.99356, 3.95552)
+
+[node name="SM_Env_Rock_Small_Pile_02" parent="." instance=ExtResource("2_2o0w1")]
+transform = Transform3D(1, 0, 0, 0, 0.585708, -0.810522, 0, 0.810522, 0.585708, -2.94492, 0.398377, 0.532462)
+
+[node name="SM_Env_Rock_Pile_03" parent="." instance=ExtResource("3_cvgab")]
+transform = Transform3D(0.178635, 0, 0, 0, 0.508362, 0, 0, 0, 0.259975, -3.74349, 0, 0.172265)
+
+[node name="SM_Env_Rock_Cliff_01" parent="." instance=ExtResource("4_4tc2n")]
+transform = Transform3D(0.988583, 0, -0.150674, 0, 1, 0, 0.150674, 0, 0.988583, -0.935787, -4.90392, -2.56466)
+
+[node name="SM_Bld_Windmill_01" parent="." instance=ExtResource("5_8plqf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.29103, -1.20238, -6.20476)

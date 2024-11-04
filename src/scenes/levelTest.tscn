@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://c3dtpwn1q0ftu"]
+[gd_scene load_steps=15 format=3 uid="uid://c3dtpwn1q0ftu"]
 
 [ext_resource type="PackedScene" uid="uid://bo06ccpt6oe6k" path="res://src/player.tscn" id="1_sqf1x"]
 [ext_resource type="Script" path="res://src/scripts/player.gd" id="2_1uqg0"]
 [ext_resource type="ArrayMesh" uid="uid://rjcjqoiyc0rr" path="res://assets/models/rock.obj" id="3_rcii3"]
 [ext_resource type="Script" path="res://src/scripts/camera.gd" id="3_wth0y"]
 [ext_resource type="Texture2D" uid="uid://c1hga3i46xiu8" path="res://assets/models/rock_diffuse.png" id="4_e475t"]
+[ext_resource type="PackedScene" uid="uid://cjprmoc2ld8jr" path="res://assets/models/windmill.glb" id="6_6x7nx"]
+[ext_resource type="PackedScene" uid="uid://b0en7qkqhs2qe" path="res://assets/models/crate_1.glb" id="6_kb7cb"]
+[ext_resource type="PackedScene" uid="uid://dbkck75tmsbnq" path="res://assets/models/rock_wall.glb" id="7_4wtor"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kx31x"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -37,13 +40,19 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="player" parent="." instance=ExtResource("1_sqf1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.02788, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.02788, 0.79791)
 script = ExtResource("2_1uqg0")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.999918, 0, -0.0127755, 0, 1, 0, 0.0127755, 0, 0.999918, -0.0768461, 0, 11.1495)
 fov = 30.0
 script = ExtResource("3_wth0y")
+
+[node name="crate_2" parent="." instance=ExtResource("6_kb7cb")]
+transform = Transform3D(-0.744028, 0, 2.12342, 0, 2.25, 0, -2.12342, 0, -0.744028, -5.18831, 3.14071, -0.446829)
+
+[node name="crate_1" parent="." instance=ExtResource("6_kb7cb")]
+transform = Transform3D(0.010053, 0, -1.49997, 0, 1.5, 0, 1.49997, 0, 0.010053, -3.47978, 3.05947, -0.698134)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.374, 1.369)
@@ -71,3 +80,15 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.841863, -0.395159, 0)
 mesh = ExtResource("3_rcii3")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ajovp")
+
+[node name="windmill" parent="." instance=ExtResource("6_6x7nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.33667, 1.61892, -6.70967)
+
+[node name="rock_wall" parent="." instance=ExtResource("7_4wtor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.13387, 3.05947, -1.2492)
+
+[node name="rock_wall" parent="rock_wall" instance=ExtResource("7_4wtor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.08566, -0.0509236, -0.110343)
+
+[node name="rock_wall" parent="rock_wall/rock_wall" instance=ExtResource("7_4wtor")]
+transform = Transform3D(0.308336, 0, 0.951277, 0, 1, 0, -0.951277, 0, 0.308336, -4.59692, -0.0509236, -2.11047)
